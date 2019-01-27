@@ -1,4 +1,4 @@
-﻿@Model List<string>
+﻿@model List<todo6.Models.TodoItem>
 @{
     ViewBag.Title = "Todo";
 }
@@ -8,11 +8,20 @@
 
 <ol>
 
-    @foreach (string item in Model)
+    @foreach (var item in Model)
     {
-        <li>@item</li>
+        if (item.Done)
+        {
+            <li><strike>@item.Name</strike></li>
+        }
+        else
+        {
+            <li>@item.Name</li>
+
+        }
+
     }
 
-   
+
 </ol>
 
