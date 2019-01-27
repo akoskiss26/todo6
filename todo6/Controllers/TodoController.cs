@@ -21,5 +21,11 @@ namespace todo6.Controllers
 
             return View(lista);
         }
+
+        public ActionResult Create()
+        {
+
+            return View();
+        }
     }
 }
