@@ -26,5 +26,13 @@ namespace todo6.Controllers
 
             return View();
         }
+
+        public ActionResult Todo()
+        {
+            ViewBag.Message = "Your Todo page.";
+
+            return View();
+        }
+
     }
 }
