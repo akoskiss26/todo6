@@ -36,4 +36,8 @@ a foreach -ben az item-et változtattuk, mert egy record több elemet tartalmaz, í
 
 -a @Html.ActionLink("szöveg", "AR fgv ahova menni akarunk")  - ezt használjuk most pl. a Cancel-re 
 
+- ha az AR fgv-nek input paramétert adunk: Create(string Name) akkor a model binding a beviteli mezõbe írt szöveget átadja a Create fgv-nek, feltéve hogy:
+az input mezõ elnevezése és a Create fgv input paraméterének neve egyezik
+így a Create fgv-ben egy if elágazással figyelhetjük h a beviteli mezõben van-e adat, és ha van elmenthetjük, és visszatérünk pl. az index oldalra
+
 -fenti a GET metódust használja (input alapértelmezett tulajdonsága) NEM SZABVÁNYOS

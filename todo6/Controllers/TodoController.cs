@@ -22,8 +22,14 @@ namespace todo6.Controllers
             return View(lista);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(string Name)
         {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                //Ha nem üres a beviteli mező -> elmentjük a tartalmát és visszamegyünk az indexre
+                return RedirectToAction("index");
+
+            }
 
             return View();
         }
