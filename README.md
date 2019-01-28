@@ -63,6 +63,10 @@ private List<TodoItem> lista = new List<TodoItem>
  - így az adattárolás a futási idõ alatt perzisztens, de ha leállítjuk az alkalamazást, az adatok elvesznek
 
 
+## POST metódus használata
+a <form> -nak a method alapértelmezése GET. Állítsuk át POST-ra       <form method="post"> </form>
+
+Az adatok form data-n jönnek be, és a model binding fogja a create fgv paraméterébe betenni  
 
 
 
