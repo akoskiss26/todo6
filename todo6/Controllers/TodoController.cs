@@ -9,13 +9,7 @@ namespace todo6.Controllers
 {
     public class TodoController : Controller
     {
-        private List<TodoItem> lista = new List<TodoItem>
-            {
-                new TodoItem() { Name = "só", Done = true },
-                new TodoItem() { Name = "bors", Done = true },
-                new TodoItem() { Name = "liszt", Done = false },
-                new TodoItem() { Name = "kapor", Done = true }
-            };
+        
 
 
         public ActionResult Index()
@@ -24,7 +18,7 @@ namespace todo6.Controllers
 
             
 
-            return View(lista);
+            return View(MyDb.Lista);
         }
 
         public ActionResult Create(string Name)
@@ -32,7 +26,7 @@ namespace todo6.Controllers
             if (!string.IsNullOrEmpty(Name))
             {
                 //Ha nem üres a beviteli mező -> elmentjük a tartalmát és visszamegyünk az indexre
-                lista.Add(new TodoItem() {Name=Name, Done = true });
+               MyDb.Lista.Add(new TodoItem() {Name=Name, Done = true });
                 return RedirectToAction("index");
 
             }

@@ -53,3 +53,16 @@ private List<TodoItem> lista = new List<TodoItem>
             };
 
 - persze még ez sem jó, mert a TodoController minden meghívásra újraindul, így az adattárolás nem perzisztens
+
+## A publikus változókat nagy kezdõbetûvel írjuk
+
+## Az adatbáis áthelyezése
+ - A Model könyvtárban készítünk egy új osztályt MyDb néven, és ide hozzuk át az adatbázis készitését,
+ ami eredetileg a Todo controllerben volt.
+ - a Todo controller index fgv-ében az eddigi lista nevet lecseréljük MyDb.Lista névre 
+ - így az adattárolás a futási idõ alatt perzisztens, de ha leállítjuk az alkalamazást, az adatok elvesznek
+
+
+
+
+
