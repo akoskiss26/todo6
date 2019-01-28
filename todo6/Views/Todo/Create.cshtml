@@ -7,7 +7,10 @@
 <h3>Új adat felvitele</h3>
 
 <form method="post">
-    <input name="Name"/>
+    <input name="name"/>
+    @*<input name="isdone" type="checkbox" value="true" />*@  
+
+    @Html.CheckBox("isDone");
     <button>felvitel</button>
 </form>
 

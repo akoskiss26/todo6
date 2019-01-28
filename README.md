@@ -70,3 +70,12 @@ Az adatok form data-n jönnek be, és a model binding fogja a create fgv paraméter
 
 
 
+## Get és Post kérés szétválasztása annotációval és overloadinggal
+két action fgv-ünk van, az egyik elõtt Httpget a másik elõtt HttpPost attrribútum.
+az adott action csak az attribútumnak megfelelõ kérést szolgál ki
+több attribútummal is lehet szûrni egyszerre
+
+## Checkbox
+create() fgv paraméterlistáját kiegészítettük az isDone-al
+ a Create.cshtml-ben az input mezõ elnevezése és a tipus checkbox-ra állítása, majd value adás -> nem mûködik
+@Http.checkbox("hivatkozási név")  ez mûködik!

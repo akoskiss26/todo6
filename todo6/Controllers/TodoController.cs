@@ -21,16 +21,25 @@ namespace todo6.Controllers
             return View(MyDb.Lista);
         }
 
-        public ActionResult Create(string Name)
+        [HttpGet]  //a routing csak a get kéréseknél irányít ide
+        public ActionResult Create()
         {
-            if (!string.IsNullOrEmpty(Name))
+
+            return View();
+        }
+
+        [HttpPost]  //a routing csak a post kéréseknél irányít ide
+        public ActionResult Create(string name, bool isDone)
+        {
+            if (!string.IsNullOrEmpty(name))
             {
                 //Ha nem üres a beviteli mező -> elmentjük a tartalmát és visszamegyünk az indexre
-               MyDb.Lista.Add(new TodoItem() {Name=Name, Done = true });
+               MyDb.Lista.Add(new TodoItem() {Name=name, Done = isDone });
                 return RedirectToAction("index");
 
             }
 
+            //todo: mivel az adat nem valid, hibaüzenetet kellene kiadni az ügyfél felé
             return View();
         }
     }
