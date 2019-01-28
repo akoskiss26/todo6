@@ -40,4 +40,16 @@ a foreach -ben az item-et változtattuk, mert egy record több elemet tartalmaz, í
 az input mezõ elnevezése és a Create fgv input paraméterének neve egyezik
 így a Create fgv-ben egy if elágazással figyelhetjük h a beviteli mezõben van-e adat, és ha van elmenthetjük, és visszatérünk pl. az index oldalra
 
--fenti a GET metódust használja (input alapértelmezett tulajdonsága) NEM SZABVÁNYOS
+- fenti a GET metódust használja (input alapértelmezett tulajdonsága) NEM SZABVÁNYOS
+
+- az új adat ekmentéséhez a Create AR-nek is kell látnia a lista-t, ezért a lista létrehozását az index AR-bõl áttesszük a TodoController osztályba, így a Todo minden fgv-e látni fogja
+
+private List<TodoItem> lista = new List<TodoItem>
+            {
+                new TodoItem() { Name = "só", Done = true },
+                new TodoItem() { Name = "bors", Done = true },
+                new TodoItem() { Name = "liszt", Done = false },
+                new TodoItem() { Name = "kapor", Done = true }
+            };
+
+- persze még ez sem jó, mert a TodoController minden meghívásra újraindul, így az adattárolás nem perzisztens

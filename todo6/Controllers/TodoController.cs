@@ -9,15 +9,20 @@ namespace todo6.Controllers
 {
     public class TodoController : Controller
     {
+        private List<TodoItem> lista = new List<TodoItem>
+            {
+                new TodoItem() { Name = "só", Done = true },
+                new TodoItem() { Name = "bors", Done = true },
+                new TodoItem() { Name = "liszt", Done = false },
+                new TodoItem() { Name = "kapor", Done = true }
+            };
+
+
         public ActionResult Index()
         {
             ViewBag.Message = "Your Todo page.";
 
-            var lista = new List<TodoItem>();
-            lista.Add(new TodoItem() { Name = "só", Done = true });
-            lista.Add(new TodoItem() { Name = "bors", Done = true });
-            lista.Add(new TodoItem() { Name = "liszt", Done = false });
-            lista.Add(new TodoItem() { Name = "kapor", Done = true });
+            
 
             return View(lista);
         }
@@ -27,6 +32,7 @@ namespace todo6.Controllers
             if (!string.IsNullOrEmpty(Name))
             {
                 //Ha nem üres a beviteli mező -> elmentjük a tartalmát és visszamegyünk az indexre
+                lista.Add(new TodoItem() {Name=Name, Done = true });
                 return RedirectToAction("index");
 
             }
