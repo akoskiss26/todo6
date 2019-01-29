@@ -12,10 +12,10 @@ namespace todo6.Models
     {
         public static List<TodoItem> Lista = new List<TodoItem>
             {
-                new TodoItem() { Name = "só", Done = true },
-                new TodoItem() { Name = "bors", Done = true },
-                new TodoItem() { Name = "liszt", Done = false },
-                new TodoItem() { Name = "kapor", Done = true }
+                new TodoItem() { Id = 1, Name = "só", Done = true },
+                new TodoItem() { Id = 2, Name = "bors", Done = true },
+                new TodoItem() { Id = 3, Name = "liszt", Done = false },
+                new TodoItem() { Id = 4, Name = "kapor", Done = true }
             };
     }
 }

@@ -79,3 +79,26 @@ több attribútummal is lehet szûrni egyszerre
 create() fgv paraméterlistáját kiegészítettük az isDone-al
  a Create.cshtml-ben az input mezõ elnevezése és a tipus checkbox-ra állítása, majd value adás -> nem mûködik
 @Http.checkbox("hivatkozási név")  ez mûködik!
+
+
+## SQL szerver telepítése
+
+## CRUD proramozása
+
+megvan már a felviteli ûrlap, most szeretnénk adatot módosítani vagy törölni
+
+## módosítás ûrlap készítése
+ - nézet készítése
+ - GET action készítése  
+	- a módosítandó tételt azonosítani kell -> elsõdleges kulcs (sorszám)
+ - PUT action készítése  (a PUT ismételhetõ módosítást jelent)
+
+## törlés ûrlap készítése
+ - nézet készítés
+ - GET action készítés
+ - DELETE action készítése
+
+## megtekintés lap készítése
+ - nézet készítés
+ - GET action készítés
+

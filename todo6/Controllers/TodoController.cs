@@ -42,5 +42,38 @@ namespace todo6.Controllers
             //todo: mivel az adat nem valid, hibaüzenetet kellene kiadni az ügyfél felé
             return View();
         }
+
+
+
+        /// <summary>
+        /// az action feladata az adott elem megjelenítése módosításra
+        /// </summary>
+        /// <param name="id">a módosítandó tétel egyedi azonosítója</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Edit( int id)
+        {
+            //elő kell keresni a kívánt elemet
+
+            //alább egy olyan lista, amelyben csak a feltételnek megfelelő elemek vannak
+            //MyDb.Lista.Where(x => x.Id == id);    
+
+            var item = MyDb.Lista.Single(x => x.Id == id);  //csak akkor működik, ha egy és csak egy ilyen elem van
+
+            // a fenti elemet kell módosítani
+
+            // másik megoldás: ez ha nincs ilyen elem, null-al tér vissza
+            var item1 = MyDb.Lista.SingleOrDefault(x => x.Id == id);
+
+            return View(item);
+        }
+
+
+        [HttpPut]
+        public ActionResult Edit(string name, bool isDone)
+        {
+
+            return View();
+        }
     }
 }

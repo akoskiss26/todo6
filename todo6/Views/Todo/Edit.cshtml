@@ -1,0 +1,18 @@
+﻿
+@model todo6.Models.TodoItem
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<h3>Adatmódosítás</h3>
+
+<form method="put">
+    <input name="name" value="@Model.Name"/>
+    @*<input name="isdone" type="checkbox" value="true" />*@  
+
+    @Html.CheckBox("isDone");
+    <button>felvitel</button>
+</form>
+
+@Html.ActionLink("Cancel","index")
