@@ -1,18 +1,23 @@
-﻿
-@model todo6.Models.TodoItem
+﻿@model todo6.Models.TodoItem
+
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
-<h3>Adatmódosítás</h3>
 
-<form method="put">
-    <input name="name" value="@Model.Name"/>
-    @*<input name="isdone" type="checkbox" value="true" />*@  
+@using (Html.BeginForm("Edit", "Todo", FormMethod.Post))
+{
+    @Html.EditorFor(x=>x.Name)
+    @Html.EditorFor(x=>x.Done)
+  
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        @Html.HiddenFor(model => model.Id)
 
-    @Html.CheckBox("isDone");
-    <button>felvitel</button>
-</form>
+      
+                <input type="submit" value="Mentés" />
+        
+  
+}
 
-@Html.ActionLink("Cancel","index")
+@Html.ActionLink("Back to List", "Index")

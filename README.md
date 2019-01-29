@@ -102,3 +102,4 @@ megvan már a felviteli ûrlap, most szeretnénk adatot módosítani vagy törölni
  - nézet készítés
  - GET action készítés
 
+## zsákutcák után a megoldás

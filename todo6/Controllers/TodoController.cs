@@ -69,11 +69,17 @@ namespace todo6.Controllers
         }
 
 
-        [HttpPut]
-        public ActionResult Edit(string name, bool isDone)
+        [HttpPost]
+        public ActionResult Edit(int id, string name, bool done)
         {
+            //aktuális elem kikeresése
+            var item = MyDb.Lista.Single(x => x.Id == id);
 
-            return View();
+            //aktuális elem megváltoztatása
+            item.Name = name;
+            item.Done = done;
+
+            return RedirectToAction("index");
         }
     }
 }
